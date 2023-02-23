@@ -1,3 +1,7 @@
+body {
+    width: 375px;
+}
+
 .grey-icon {
     color: #7E7E7E;
 }
@@ -13,13 +17,14 @@ header {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .header-first-block {
     width: 375px;
     box-shadow: 0px 2px 4px 0px #00000026;
     display: flex;
-
+    align-items: center;
     justify-content: center;
 }
 
@@ -199,3 +204,35 @@ header {
     list-style-type: none;
     margin-bottom: 7px;
 }
+
+
+
+
+
+
+
+
+/*Page - La palette du gout*/
+
+/*Header - La palette du gout*/
+
+.header-menu {
+    width: 100%;
+}
+
+.header-first-block-space {
+    justify-content: left;
+    height: 63px;
+}
+
+.logo-menu {
+    margin-left: 23px;
+    margin-right: 70px;
+}
+
+.header-picture-menu {
+    width: 375px;
+    height: 275px;
+}
+
+/*Menu - La palette du gout*/
