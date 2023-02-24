@@ -237,8 +237,67 @@ header {
 
 /*Menu*/
 
+.bloc-menu {
+    background-color: #F6F6F6;
+    height: 1517px;
+    border-radius: 20px 20px 0 0;
+    padding: 0 13px 0 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.restaurant-name-menu {
+    display: flex;
+    align-items: center;
+}
 
+.restaurant-name-menu h1 {
+    margin-right: 60px;
+    font-size: 28px;
+}
 
+.starter-bloc-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+.title-bloc-menu {
+    border-bottom: 3px solid #99E2D0;
+    width: 40px;
+    height: 27px;
+}
 
+.card-menu {
+    width: 97%;
+    height: 68px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.card-menu h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.card-menu p {
+    margin: 0;
+}
+
+.card-menu h3 {
+    width: 35px;
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.card-title {
+    margin-bottom: 12px;
+}
