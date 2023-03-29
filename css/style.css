@@ -1,5 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 * {
@@ -118,6 +120,7 @@ header {
     border-style: none;
     font-size: 16px;
     margin-top: 17px;
+    transition: all 0.7s ease;
 }
 
 .button-presentation-block-header:hover {
@@ -170,16 +173,15 @@ header {
     box-shadow: 0px 4px 15px 0px #00000026;
     margin-bottom: 25px;
     margin-top: 26px;
-    margin-right: ;
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: all 0.8s ease;
 }
 
 .card-instruction-block:hover {
     background-color: #F5EDFF;
 }
-
 
 .card-instruction-block i {
     padding-right: 20px;
@@ -220,7 +222,8 @@ header {
 
 .card-container-restaurant-block {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -256,25 +259,33 @@ header {
     margin: 0;
 }
 
-
 .heart-empty {
     position: absolute;
+    opacity: 1;
+    transition: all 1s;
 }
+
+
 
 .heart-full {
     position: absolute;
     opacity: 0;
     transition-property: all;
-    transition-duration: 2s;
-}
-
-.heart-full:hover {
-    opacity: 1;
-    color: transparent;
-    background-clip: border-box;
+    transition-duration: 1s;
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-image: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
+
+.heart-button:hover .heart-full {
+    opacity: 1;
+}
+
+.heart-button:hover .heart-empty {
+    opacity: 0;
+}
+
+
 
 .card-text-menu {
     margin-top: -25px;
@@ -295,6 +306,7 @@ header {
     background-color: var(--color-secondary);
     margin-top: -9px;
 }
+
 
 
 
@@ -345,7 +357,6 @@ header {
 /*Page-Menu*/
 
 /*Header*/
-
 .header-menu {
     min-width: 375px;
     width: 100%;
@@ -365,7 +376,6 @@ header {
 }
 
 /*Menu*/
-
 .bloc-menu {
     background-color: var(--color-tertiary);
     border-radius: 20px 20px 0 0;
@@ -468,15 +478,23 @@ header {
     padding-bottom: 12px;
 }
 
-.card-title {
-    margin-bottom: 12px;
-}
 
 .text-card-menu {
     margin-bottom: 12px;
-    text-overflow: ellipsis;
     width: calc(100% - 34px);
     transition: all 1.5s ease;
+}
+
+.text-card-menu p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.text-card-menu h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .green-check {
@@ -518,6 +536,8 @@ header {
     box-shadow: 0px 4px 10px 0px #00000040;
     margin-top: 40px;
     margin-bottom: 40px;
+    transition: all 1s ease;
+
 }
 
 .button-menu:hover {
@@ -531,16 +551,16 @@ header {
 
 
 
+
+
+
+
 @media only screen and (min-width: 850px) {
-
-
-
 
     /*Header*/
 
 
     /*Instruction*/
-
     .instruction-block {
         width: 100%;
         height: 262px;
@@ -576,6 +596,8 @@ header {
 
     .restaurant-block {
         height: 436px;
+        width: 100%;
+        padding-left: 10%;
     }
 
     .card-restaurant-block {
@@ -585,15 +607,16 @@ header {
         transition: width 1s;
     }
 
-    .card-restaurant-block:hover {
-        width: 340px;
+    .card-restaurant-block:first-child {
+        margin-left: 20%;
     }
 
     .card-container-restaurant-block {
         display: flex;
-        flex-direction: row;
+        flex-wrap: nowrap;
         overflow-x: scroll;
-        padding-left: 30%;
+        width: 100%;
+        margin: auto;
     }
 
     .button-restaurant-bock {
@@ -655,10 +678,12 @@ header {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: #CEECF5;
-    opacity: 0.7;
+    background-color: #afe0e2;
+    opacity: 1;
     position: fixed;
-    animation: background-leave 3s forwards;
+    animation: background-leave 5s forwards;
+    animation-delay: 2s;
+    z-index: 5;
 }
 
 
@@ -668,33 +693,27 @@ header {
     border: 6px solid;
     border-color: white transparent white transparent;
     border-radius: 50%;
-    animation: spin 3s forwards;
+    animation: spin 5s forwards;
 }
 
 @keyframes spin {
     from {
         transform: rotate(0deg);
-        z-index: 2;
-        opacity: 1;
-
     }
 
     to {
         transform: rotate(360deg);
-        z-index: -20;
-        opacity: 0;
     }
 }
 
 @keyframes background-leave {
     from {
-        z-index: 2;
         opacity: 1;
 
     }
 
     to {
-        z-index: -1;
-        opacity: 0.1;
+        opacity: 0;
+        z-index: 2;
     }
 }
