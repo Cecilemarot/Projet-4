@@ -707,13 +707,18 @@ header {
 }
 
 @keyframes background-leave {
-    from {
+
+    0% {
         opacity: 1;
 
     }
 
-    to {
+    99% {
         opacity: 0;
-        z-index: 2;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
     }
 }
