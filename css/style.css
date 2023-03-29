@@ -598,6 +598,7 @@ header {
         height: 436px;
         width: 100%;
         padding-left: 10%;
+        box-sizing: border-box;
     }
 
     .card-restaurant-block {
@@ -607,14 +608,13 @@ header {
         transition: width 1s;
     }
 
-    .card-restaurant-block:first-child {
-        margin-left: 20%;
-    }
+
 
     .card-container-restaurant-block {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: scroll;
+        justify-content: flex-start;
         width: 100%;
         margin: auto;
     }
